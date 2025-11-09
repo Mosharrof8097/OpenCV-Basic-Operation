@@ -17,5 +17,5 @@ else:
 
     cv2.imshow("After line image is ",image )
     cv2.waitKey(0)
-    cv2.destroyAllWindows
+    cv2.destroyAllWindows()
 

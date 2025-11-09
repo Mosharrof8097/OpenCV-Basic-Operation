@@ -20,4 +20,4 @@ else:
     cv2.imshow("rorated image ",rotated)
     
     cv2.waitKey(0)
-    cv2.destroyAllWindows
+    cv2.destroyAllWindows()
