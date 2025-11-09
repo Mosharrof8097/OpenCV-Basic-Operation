@@ -1,16 +1,21 @@
 import cv2
 
-cap = cv2.VideoCapture(0)  # 0 = default webcam
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)   # Windows stable driver
 
 while True:
-    success, frame = cap.read()  # read a frame
-    if not success:
+    ret, frame = cap.read()
+    if not ret:
+        print("Camera not responding!")
         break
 
     cv2.imshow("Webcam", frame)
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):  # press q to exit
-        break
+    key = cv2.waitKey(1)
+
+    # q চাপলে break
+    if key != -1:
+        if chr(key) == 'q':
+            break
 
 cap.release()
 cv2.destroyAllWindows()
